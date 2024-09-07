@@ -26,33 +26,26 @@ module alu#(
     parameter NB_DATA = 4
 )
 (
-    input [NB_DATA-1:0] i_data_a,
-    input [NB_DATA-1:0] i_data_b,
+    input signed [NB_DATA-1:0] i_data_a,
+    input signed [NB_DATA-1:0] i_data_b,
     input [NB_OP-1:0] i_op,
-    output [NB_DATA-1:0] o_data,
+    output signed [NB_DATA-1:0] o_data,
     output zero,
     output carry
 );
-    reg [NB_DATA-1:0] tmp;
-    reg tmp_zero;
-    reg tmp_carry;
+    reg signed [NB_DATA-1:0] tmp;
+    reg signed tmp_zero;
+    reg signed tmp_carry;
     always @(*) begin:mux_alu
         case(i_op)
             6'b100000: tmp = i_data_a + i_data_b;   // ADD
-            6'b100010: begin
-                if (i_data_b >= i_data_a) begin 
-                    tmp = 4'b0000;
-                    tmp_zero = 1'b1;
-                    end
-                else if (i_data_b < i_data_a) begin
-                    tmp = i_data_a - i_data_b;
-                    tmp_zero = 1'b0;
-                    end
-                end // SUB
+            6'b100010: tmp = i_data_a - i_data_b;
             6'b100100: tmp = i_data_a & i_data_b;   // AND
             6'b100101: tmp = i_data_a | i_data_b;   // OR
             6'b100110: tmp = i_data_a ^ i_data_b;   // XOR
-            default: tmp = 4'b0000;
+            6'b000011: tmp = i_data_a >>> i_data_b;  // SRA
+            6'b000010: tmp = i_data_a >> i_data_b;  // SRL
+            6'b100111: tmp = ~(i_data_a | i_data_b);//NOR
         endcase
     end
     assign o_data = tmp;

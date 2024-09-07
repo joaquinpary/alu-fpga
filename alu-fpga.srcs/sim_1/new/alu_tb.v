@@ -23,10 +23,10 @@
 module alu_tb;
 
     // Declarar las señales de entrada y salida
-    reg [3:0] i_data_a;
-    reg [3:0] i_data_b;
-    reg [5:0] i_op;
-    wire [3:0] o_data;
+    reg signed [3:0] i_data_a;
+    reg signed [3:0] i_data_b;
+    reg signed [5:0] i_op;
+    wire signed [3:0] o_data;
 
     // Instanciar el módulo ALU con parámetros
     alu #(
@@ -43,30 +43,40 @@ module alu_tb;
     initial begin
         // Establecer valores para las señales de entrada
         
-        i_data_a = 2;
-        i_data_b = 3;
-        i_op = 6'b100000;    // ADD
-        #10;
+//        i_data_a = 2;
+//        i_data_b = 3;
+//        i_op = 6'b100000;    // ADD
+//        #10;
         
-        i_data_a = 3;
-        i_data_b = 10;
+        i_data_a = -3;
+        i_data_b = 6;
         i_op = 6'b100010;    // SUB
         #10;
         
-        i_data_a = 4'b0001;
-        i_data_b = 4'b0010;
-        i_op = 6'b100100;    // AND
-        #10;
+//        i_data_a = 4'b0001;
+//        i_data_b = 4'b0010;
+//        i_op = 6'b100100;    // AND
+//        #10;
         
-        i_data_a = 4'b0001;
-        i_data_b = 4'b0010;
-        i_op = 6'b100101;    // OR
-        #10;
+//        i_data_a = 4'b0001;
+//        i_data_b = 4'b0010;
+//        i_op = 6'b100101;    // OR
+//        #10;
         
-        i_data_a = 4'b0001;
-        i_data_b = 4'b0010;
-        i_op = 6'b100110;    // XOR
-        #10;
+//        i_data_a = 4'b0001;
+//        i_data_b = 4'b0010;
+//        i_op = 6'b100110;    // XOR
+//        #10;
+        
+//        i_data_a = 240;
+//        i_data_b = 3;
+//        i_op = 6'b000011;    // SRA
+//        #10;
+        
+//        i_data_a = 240;
+//        i_data_b = 3;
+//        i_op = 6'b000010;    // SLA
+//        #10;
         $finish;           // Finish Sim
     end
 

@@ -1,0 +1,12 @@
+Time resolution is 1 ps
+Test pasado. i_data_a:   4, i_data_b:   1, i_op: 100000, resultado:   5
+Test pasado. i_data_a:  -7, i_data_b:   3, i_op: 100010, resultado:   6
+Test pasado. i_data_a:  -3, i_data_b:  -3, i_op: 100100, resultado:  -3
+Test pasado. i_data_a:   5, i_data_b:   2, i_op: 100101, resultado:   7
+Test pasado. i_data_a:   1, i_data_b:  -3, i_op: 100110, resultado:  -4
+Test pasado. i_data_a:   6, i_data_b:  -3, i_op: 000011, resultado:   0
+Test pasado. i_data_a:  -3, i_data_b:  -4, i_op: 000010, resultado:   0
+Test pasado. i_data_a:  -7, i_data_b:   6, i_op: 100111, resultado:   0
+Test pasado. i_data_a:   5, i_data_b:  -6, i_op: 100111, resultado:   0
+Test pasado. i_data_a:   5, i_data_b:   7, i_op: 100111, resultado:  -8
+$finish called at time : 120 ns : File "/home/joaquin/Facultad/ARQUITECTURA/alu-fpga/alu-fpga.srcs/sim_1/new/top_alu_tb.v" Line 110

@@ -1,7 +1,8 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
 "../../../../alu-fpga.srcs/sources_1/new/alu.v" \
-"../../../../alu-fpga.srcs/sim_1/new/alu_tb.v" \
+"../../../../alu-fpga.srcs/sources_1/new/top.v" \
+"../../../../alu-fpga.srcs/sim_1/new/top_alu_tb.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

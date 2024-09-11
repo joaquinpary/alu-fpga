@@ -6,7 +6,7 @@
 // Create Date: 09/09/2024 12:26:44 PM
 // Design Name: 
 // Module Name: top
-// Project Name: 
+// Project Name: ALU 
 // Target Devices: 
 // Tool Versions: 
 // Description: 
@@ -22,36 +22,38 @@
 
 module top #(
     parameter NB_OP = 6,
-    parameter NB_DATA = 4
+    parameter NB_DATA = 4,
+    parameter NB_BUS = 6
     )
     (
     input button_a,
     input button_b,
     input button_op,
-    input signed [NB_DATA-1:0] i_data_a,
-    input signed [NB_DATA-1:0] i_data_b,
-    input [NB_OP-1:0] i_op,
+    input [NB_BUS-1:0] i_switch,
     output signed [NB_DATA-1:0] o_data
     );
     
     reg [NB_DATA-1:0] i_data_a_update, i_data_b_update;
     reg [NB_OP-1:0] i_op_update;
     
-    always @(button_a) begin:i_update_a
-        i_data_a_update <= i_data_a;   
+    // Hay que usar un solo switch para los valores de entrada, es decir utilizar la misma entrada para los 3 datos
+    // Entra al always en bajada y subida (cambios de valor, pasaje de 0 a 1 y 1 a 0)
+    
+    always @(posedge button_a) begin:i_update_a
+        i_data_a_update <= i_switch [NB_DATA-1:0];   
     end
-    always @(button_b) begin:i_update_b
-        i_data_b_update <= i_data_b;
+    always @(posedge button_b) begin:i_update_b
+        i_data_b_update <= i_switch [NB_DATA-1:0];
     end
-    always @(button_op) begin:i_update_op
-        i_op_update <= i_op;
+    always @(posedge button_op) begin:i_update_op
+        i_op_update <= i_switch [NB_OP-1:0];
     end
       
     alu #(
-        .NB_OP(NB_OP),         // Parámetro NB_OP
-        .NB_DATA(NB_DATA)        // Parámetro NB_DATA
+        .NB_OP(NB_OP),
+        .NB_DATA(NB_DATA)   
     ) 
-    alu_inst (                // "uut" es la unidad bajo prueba (Unit Under Test)
+    alu_inst (           
         .i_data_a(i_data_a_update),
         .i_data_b(i_data_b_update),
         .i_op(i_op_update),

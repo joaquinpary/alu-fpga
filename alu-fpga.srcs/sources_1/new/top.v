@@ -30,7 +30,9 @@ module top #(
     input button_b,
     input button_op,
     input [NB_BUS-1:0] i_switch,
-    output signed [NB_DATA-1:0] o_data
+    output signed [NB_DATA-1:0] o_data,
+    output o_carry,
+    output o_zero
     );
     
     reg [NB_DATA-1:0] i_data_a_update, i_data_b_update;
@@ -57,7 +59,9 @@ module top #(
         .i_data_a(i_data_a_update),
         .i_data_b(i_data_b_update),
         .i_op(i_op_update),
-        .o_data(o_data)
+        .o_data(o_data),
+        .o_carry(o_carry),
+        .o_zero(o_zero)
     );
     
     

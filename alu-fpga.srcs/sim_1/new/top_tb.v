@@ -31,7 +31,13 @@ module top_tb;
     reg [5:0] data_op;
     
     wire signed [3:0] o_data;
+    wire o_carry;
+    wire o_zero;
+    
+    // Register for result test
     reg signed [3:0] expected_result;
+    
+    // for variable
     integer i;
     
     // Instance top 
@@ -44,7 +50,9 @@ module top_tb;
         .button_b(button_b),
         .button_op(button_op),
         .i_switch(i_switch),
-        .o_data(o_data)
+        .o_data(o_data),
+        .o_carry(o_carry),
+        .o_zero(o_zero)
     );
     
     // Compare results

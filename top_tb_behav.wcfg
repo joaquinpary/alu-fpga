@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="22.241 ns"></ZoomEndTime>
-      <Cursor1Time time="2.920 ns"></Cursor1Time>
+      <ZoomEndTime time="160.001 ns"></ZoomEndTime>
+      <Cursor1Time time="4.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="241"></NameColumnWidth>
-      <ValueColumnWidth column_width="103"></ValueColumnWidth>
+      <ValueColumnWidth column_width="93"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="10" />
+   <WVObjectSize size="12" />
    <wvobject type="logic" fp_name="/top_tb/button_a">
       <obj_property name="ElementShortName">button_a</obj_property>
       <obj_property name="ObjectShortName">button_a</obj_property>
@@ -35,22 +35,18 @@
    <wvobject type="array" fp_name="/top_tb/i_switch">
       <obj_property name="ElementShortName">i_switch[5:0]</obj_property>
       <obj_property name="ObjectShortName">i_switch[5:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/data_a">
       <obj_property name="ElementShortName">data_a[3:0]</obj_property>
       <obj_property name="ObjectShortName">data_a[3:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/data_b">
       <obj_property name="ElementShortName">data_b[3:0]</obj_property>
       <obj_property name="ObjectShortName">data_b[3:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/data_op">
       <obj_property name="ElementShortName">data_op[5:0]</obj_property>
       <obj_property name="ObjectShortName">data_op[5:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/o_data">
       <obj_property name="ElementShortName">o_data[3:0]</obj_property>
@@ -63,5 +59,13 @@
    <wvobject type="array" fp_name="/top_tb/i">
       <obj_property name="ElementShortName">i[31:0]</obj_property>
       <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/o_carry">
+      <obj_property name="ElementShortName">o_carry</obj_property>
+      <obj_property name="ObjectShortName">o_carry</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/o_zero">
+      <obj_property name="ElementShortName">o_zero</obj_property>
+      <obj_property name="ObjectShortName">o_zero</obj_property>
    </wvobject>
 </wave_config>

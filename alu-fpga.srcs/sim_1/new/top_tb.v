@@ -26,6 +26,7 @@ module top_tb;
     reg button_b;
     reg button_op;
     reg [5:0] i_switch;
+    reg clock;
     
     reg [3:0] data_a, data_b;
     reg [5:0] data_op;
@@ -50,6 +51,7 @@ module top_tb;
         .button_b(button_b),
         .button_op(button_op),
         .i_switch(i_switch),
+        .clock(clock),
         .o_data(o_data),
         .o_carry(o_carry),
         .o_zero(o_zero)
@@ -68,24 +70,30 @@ module top_tb;
 
     // Testbench init
     initial begin
-        for (i = 0; i < 10; i = i + 1) begin 
-        
         button_a = {4{1'b0}};
         button_b = {4{1'b0}};
         button_op = {6{1'b0}};
+        clock = 1'b0;
+        
+        for (i = 0; i < 10; i = i + 1) begin 
+       
         
         i_switch = $random % 64;
         data_a = i_switch [3:0];
-        button_a = 1;
+        button_a = 1'b1;
+        clock = 1'b1;
         #1
-        button_a = 0;
+        button_a = 1'b0;
+        clock = 1'b0;
         #1
         
         i_switch = $random % 64;
         data_b = i_switch [3:0];
-        button_b = 1;
+        button_b = 1'b1;
+        clock = 1'b1;
         #1
-        button_b = 0;
+        button_b = 1'b0;
+        clock = 1'b0;
         #1
         
         case (i)
@@ -99,9 +107,11 @@ module top_tb;
             7: i_switch = 6'b100111;
         endcase
         data_op = i_switch [5:0];
-        button_op = 1;
+        button_op = 1'b1;
+        clock = 1'b1;
         #1
-        button_op = 0;
+        button_op = 1'b0;
+        clock = 1'b0;
         #1
 
         case(i_switch[5:0])

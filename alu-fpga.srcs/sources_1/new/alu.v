@@ -32,11 +32,11 @@ module alu#(
 );
    
     reg signed [NB_DATA-1:0] tmp;
-    reg carry_tmp = 1'b0;
-    reg zero_tmp = 1'b0;
+    reg carry_tmp;
+    reg zero_tmp;
     
     always @(*) begin:mux_alu       
-        case(i_op)
+        case(i_op)       
             6'b100000: {carry_tmp, tmp} = i_data_a + i_data_b;   // ADD
             6'b100010: begin
                 tmp = i_data_a - i_data_b;

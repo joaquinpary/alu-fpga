@@ -1,0 +1,12 @@
+Time resolution is 1 ps
+Passed Test. data_a:  4, data_b:  1, data_op: 100000, obtain:   5
+Passed Test. data_a:  9, data_b:  3, data_op: 100010, obtain:   6
+Passed Test. data_a: 13, data_b: 13, data_op: 100100, obtain:  -3
+Passed Test. data_a:  5, data_b:  2, data_op: 100101, obtain:   7
+Passed Test. data_a:  1, data_b: 13, data_op: 100110, obtain:  -4
+Passed Test. data_a:  6, data_b: 13, data_op: 000011, obtain:   0
+Passed Test. data_a: 13, data_b: 12, data_op: 000010, obtain:   0
+Passed Test. data_a:  9, data_b:  6, data_op: 100111, obtain:   0
+Passed Test. data_a:  5, data_b: 10, data_op: 101010, obtain:   0
+Passed Test. data_a:  5, data_b:  7, data_op: 110111, obtain:   0
+$finish called at time : 160 ns : File "C:/Users/Santi/Desktop/Arquitectura de Computadoras/TP 1/alu-fpga-main/alu-fpga.srcs/sim_1/new/top_tb.v" Line 127

@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/09/2024 12:26:44 PM
-// Design Name: 
-// Module Name: top
-// Project Name: ALU 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module top #(
     parameter NB_OP = 6,
@@ -31,9 +11,7 @@ module top #(
     input button_op,
     input [NB_BUS-1:0] i_switch,
     input clock,
-    output signed [NB_DATA-1:0] o_data,
-    output o_carry,
-    output o_zero
+    output signed [NB_DATA-1:0] o_data
     );
     
     reg [NB_DATA-1:0] i_data_a_update, i_data_b_update;
@@ -66,9 +44,7 @@ module top #(
         .i_data_a(i_data_a_update),
         .i_data_b(i_data_b_update),
         .i_op(i_op_update),
-        .o_data(o_data),
-        .o_carry(o_carry),
-        .o_zero(o_zero)
+        .o_data(o_data)
     );
     
     
